@@ -7,7 +7,7 @@ class Gene (models.Model):
     chromosome = models.CharField(max_length=30)
     
     def __str__(self):
-        return self.chromosome
+        return self.symbol
 
 # how to make a migration:
 # 1 make the changes

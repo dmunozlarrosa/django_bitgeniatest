@@ -38,6 +38,10 @@ Set your Data Base on `./testconcept_project/settings.py` file and put your pass
 Data base data is in `./data` folder.
 The Db have the next schema:
 ![a](db.png)
+
+# Run Example
+![a](run_example.gif)
+
 ## Helper:
 Case error:
     ``` "ValuesError: attempted relative import beyond top-level package" ```
@@ -56,3 +60,5 @@ Use:
  * [Getting Started](https://docs.djangoproject.com/en/3.2/intro/)
  * [Example CRUD Employes - Youtube](https://www.youtube.com/watch?v=N6jzspc2kds)
  * [Example CRUD Employes - github](https://github.com/CodAffection/Django-CRUD-Operations)
+
+<!-- add tabss :    -----=>  https://github.com/madjar/django-bootstrap/blob/master/test_project/test_bootstrap/templates/tabs.html -->

@@ -12,6 +12,9 @@
         <div class="col-md-4" style="margin-top:40px">
             {{form.inheritance|as_crispy_field}}
         </div>
+        {% comment %} <div class="col-md-4" style="margin-top:40px">
+            {{form.genedisease|as_crispy_field}}
+        </div> {% endcomment %}
     </div>
     {% if gene_list|length > 0 %}
         <h5 class="display-5">Genes Asociados</h5>
