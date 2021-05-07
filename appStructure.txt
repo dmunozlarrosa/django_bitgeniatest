@@ -1,0 +1,27 @@
+● test_concept_register
+|
++---● gene_register (app folder)
+|   +--● templates
+|   |  |--● gene_register
+|   |  |  |--base.html
+|   |  |  |--gene_form.html
+|   |  |  |--gene_list.html
+|   |-- models.py
+|   |-- forms.py
+|   |-- urls.py
+|   |-- views.py
++---● variant_register (app folder)
+|   +--● templates
+|   |  |--● gene_register
+|   |  |  |--base.html
+|   |  |  |--gene_form.html
+|   |  |  |--gene_list.html
+|   |-- models.py
+|   |-- forms.py
+|   |-- urls.py
+|   |-- views.py
+|
++---● test_concept_register (project folder)
+|   |
+|   |--settings.py 
+|   |--urls.py

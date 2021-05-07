@@ -1,0 +1,50 @@
+{% extends "disease_register/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    <div class="row">    
+        <div class="col-md-8">
+            {{form.name|as_crispy_field}}
+        </div>
+        <div class="col-md-4" style="margin-top:40px">
+            {{form.inheritance|as_crispy_field}}
+        </div>
+    </div>
+    {% if gene_list|length > 0 %}
+        <h5 class="display-5">Genes Asociados</h5>
+            {% comment %} <h6 class="display-5"> {% endcomment %}
+        {% for gene in gene_list %}
+                <li>{{gene}}</li>
+            {% comment %} </h6> {% endcomment %}
+        {% endfor %}
+        <br/>
+    {% endif %}
+    {% if disease_tipo|length > 0 %}
+        <h5 class="display-5">Variantes </h5>
+        {% for disease in disease_tipo %}
+            <div div class="row">
+                <div class="col-md-12">
+                    <li> {{disease}}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <br/>
+    {% comment %} {{form.gene|as_crispy_field}} {% endcomment %}
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Cargar</button>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'disease_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Volver a la Lista
+            </a>
+        </div>
+    </div>
+
+</form>
+{% endblock content %}

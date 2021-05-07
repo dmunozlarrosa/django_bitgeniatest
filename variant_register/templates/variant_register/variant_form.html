@@ -1,0 +1,44 @@
+{% extends "variant_register/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-4">
+            {{form.chromosome|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
+            {{form.position|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
+            {{form.reference|as_crispy_field}}
+        </div>
+    </div>   
+    <div class="row">
+        <div class="col-md-4">
+            {{form.alternative|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
+            {{form.gene|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
+            {{form.rs|as_crispy_field}}
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Cargar</button>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'variant_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Volver a la Lista
+            </a>
+        </div>
+    </div>
+
+</form>
+{% endblock content %}

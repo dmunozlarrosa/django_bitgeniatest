@@ -1,0 +1,46 @@
+{% extends "disease_register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Nombre</td>
+            <td>Herencia</td>
+            {% comment %} <td>Gene</td> {% endcomment %}
+            <td>
+                <a href="{% url 'disease_insert' %}" class="btn btn-outline-success  float-right" style="margin-right:5px">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for disease in disease_list %}
+            <tr>
+                <td>
+                    {{disease.name}}
+                </td>
+                {% if disease.inheritance == True %} 
+                    <td><i class="fas fa-check text-success float-center"></i></td>
+                {% else %}  
+                    <td><i class="fas fa-times text-danger float-center"></i></td>
+                {% endif %}
+                {% comment %} <td>{{disease.gene.symbol}}</td> {% endcomment %}
+                <td>
+                    <form action="{% url 'disease_delete' disease.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn float-right">
+                            <i class="far fa-trash-alt fa-lg text-danger"></i>
+                        </button>
+                    </form>
+                    <a href="{% url 'disease_update' disease.id %}" class="btn text-secondary px-0 float-right">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
